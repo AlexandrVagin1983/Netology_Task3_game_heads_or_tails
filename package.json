@@ -1,0 +1,17 @@
+{
+  "name": "task-3-heads-tails",
+  "version": "1.0.0",
+  "description": "**Функционал решения:**\r * Модуль makeNumber_callBack.js реализует программу на callback и рекурсивном вызове.\r * Модуль makeNumber_Promise.js реализует программу на Промисы, async/await.\r * Вызов команд: node makeNumber_callBack.js или node  makeNumber_Promise.js.",
+  "main": "index.js",
+  "bin": {
+    "game": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}
