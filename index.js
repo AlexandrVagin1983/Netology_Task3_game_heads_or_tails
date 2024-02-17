@@ -31,7 +31,7 @@ const getUserNumber = async () => {
     const readline = require('node:readline/promises');
     const { stdin: input, stdout: output } = require('node:process');
     const rl = readline.createInterface({ input, output });
-    const number = await rl.question('Орел 1, решка 0? (a/abort прервать): ');
+    const number = await rl.question('Орел 1, решка 2? (a/abort прервать): ');
     rl.close();
     return number;
    } 
@@ -39,7 +39,7 @@ const getUserNumber = async () => {
 //Выполняет одну итерацию игры в орел и решка - запрашивает число у пользователя и получает ответ:
 const runGame = async function () {
     
-    let number = generateNumber (0, 1) // генерируем случайное число
+    let number = generateNumber (1, 2) // генерируем случайное число
     //Запрашиваем у пользователя число:
     let userNumber = await getUserNumber();
     //Сверяем введенное пользователем число с выбранным случайно:      
