@@ -77,10 +77,10 @@ function writeStringToFile(data, writeStream) {
 const startGame  = async (logPreviosGame, fileName) => {
     
     //создаем поток для записы данных в файл fileName
-    const writeStream  = require('fs').createWriteStream(fileName);
+    const writeStream  = require('fs').createWriteStream(fileName, { flags: 'a+'});
 
     //Переносим данные о предыдущих играх в файл:
-    await writeStringToFile (logPreviosGame, writeStream);
+    //await writeStringToFile (logPreviosGame, writeStream);
 
     //Записываем старт игры:
     await writeStringToFile (`Начало новой игры: ${ formatDate(new Date()) } \n`, writeStream);
@@ -125,7 +125,8 @@ if  (!argv.hasOwnProperty('file')) {
     return;
  }
  //Нужно чтобы каждый запуск новой игры не перезаписывал файл с логами, а дописывал новую игру к старым логам, поэтому прочитаем содержимое файла если он существует:
- const fs = require('fs');
+ startGame('', fileName);
+ /*const fs = require('fs');
  let data = '';
  const readerStream = fs.createReadStream(fileName);
  readerStream
@@ -140,4 +141,4 @@ if  (!argv.hasOwnProperty('file')) {
  .on('end', () => {
      //Файл существует его содержимое находится в переменной data, запускам новую игру:
      startGame(data, fileName);
- })
+ })*/
